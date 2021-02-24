@@ -28,7 +28,7 @@ $(".saveBtn").on("click", function() {
     let i = parseInt(this.value);
     let key = keyList[i];
     planner[key] = middle[i].textContent;
-    localStorage.setItem("location", JSON.stringify(planner));
+    localStorage.setItem("time", JSON.stringify(planner));
 });
 
 //   2a. onclick save-button
