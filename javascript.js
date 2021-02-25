@@ -7,7 +7,7 @@ console.log("currentDay", currentDay);
 $("#currentDay").text(currentDay);
 
 // 0c. color timeblocks (past/future)
-let middle = $(".description");
+let middle = $(".container");
 
 // 1. user click timeblock
 let planner = {
@@ -28,8 +28,17 @@ $(".saveBtn").on("click", function() {
     let i = parseInt(this.value);
     let key = keyList[i];
     planner[key] = middle[i].textContent;
-    localStorage.setItem("time", JSON.stringify(planner));
+
+    
+    renderMessage();
 });
+
+function renderMessage() {
+    let schedule = localStorage.setItem("location", JSON.stringify(planner));
+    if (schedule !== null) {
+        document.querySelector(".container".textContent) = planner;
+    }
+}
 
 //   2a. onclick save-button
 //   2b. save in object property
